@@ -20,7 +20,7 @@ class CoffeeGenerator:
         # First, determine the number of groups and their sizes.
         split = self.decide_partitioning(partitioning)
         # Now randomly shuffle the namelist.
-        order = self.namelist.copy()
+        order = np.copy(self.namelist)
         np.random.shuffle(order)
         # Then go through in this random order and split into appropriate groups to give final result.
         ndone = 0

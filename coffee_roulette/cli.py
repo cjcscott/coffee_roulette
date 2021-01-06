@@ -1,15 +1,17 @@
 """Console script for coffee_roulette."""
 import sys
 import click
-
+from . import coffee_roulette
 
 @click.command()
-def main(args=None):
+@click.argument("names", required=True, nargs = -1, type=string):
+@click.argument("--min", "minsize", required=False, default = 2, type=int)
+@click.argument("--max", "maxsize", required=False, default = 4, type=int)
+@click.argument("-p","partitioning", required=False, default="max", 
+def main(names, minsize, maxsize, partitioning):
     """Console script for coffee_roulette."""
-    click.echo("Replace this message by putting your code into "
-               "coffee_roulette.cli.main")
-    click.echo("See click documentation at https://click.palletsprojects.com/")
-    return 0
+    cofgen = coffee_roulette.CoffeeGenerator(names, minsize, maxsize)
+    return cofgen.run(partitioning)
 
 
 if __name__ == "__main__":

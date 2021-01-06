@@ -15,9 +15,15 @@ coffee_roulette
 
 
 
+A quick program to generate randomly split up a list of people for small group tasks. For example
 
-A quick program to generate random groups for zoom coffees.
+.. code-block:: bash
 
+    $ coffee_roulette alice bob carl dana engelbert francesca gerald --minsize 2 --maxsize 3
+    Determined splitting:
+    ['dana' 'francesca']
+    ['engelbert' 'gerald']
+    ['alice' 'bob' 'carl']
 
 * Free software: GNU General Public License v3
 * Documentation: https://coffee-roulette.readthedocs.io.
@@ -26,7 +32,8 @@ A quick program to generate random groups for zoom coffees.
 Features
 --------
 
-* TODO
+* Given a list of people, generates random partitioning of them into small groups.
+* The maximum and minimum sizes of groups, as well as whether to try to maximise or minimise group sizes, can be adjusted.
 
 Credits
 -------
